@@ -3,7 +3,7 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from Bot import app 
 
 @app.on_message(filters.command("start") & filters.private)
-async def start(client, query):
+async def start(client, message, query):
     await query.message.reply_text("⚡️")
     await query.message.edit_text("⚡️")
     await query.message.edit_text("✋")
