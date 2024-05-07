@@ -5,7 +5,6 @@ from Bot import app
 @app.on_message(filters.command("start") & filters.private)
 async def start(client, message):
     await message.reply_text("⚡️")
-    await message.edit("✋")
 
     keyboard = InlineKeyboardMarkup(
         [[InlineKeyboardButton("Command", callback_data="com")]]
