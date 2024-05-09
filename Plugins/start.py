@@ -4,7 +4,7 @@ from Bot import app
 
 @app.on_message(filters.command("start") & filters.private)
 async def start(client, message):
-    await message.reply("✋")
+    await message.reply("👾")
     
 
     keyboard = InlineKeyboardMarkup(
@@ -15,6 +15,9 @@ async def start(client, message):
             [
                 InlineKeyboardButton("⭐️Support⭐️", url="https://t.me/ShivaSupportChat"),
                 InlineKeyboardButton("✨Add me To Your Group✨", url="https://telegram.dog/ddmon_test_Bot?startgroup=true")
+                InlineKeyboardButton("✨OWNER✨", url="ISHIKKI_AKIRA")
+    
+            ]
             ]
         ]
     )
