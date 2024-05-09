@@ -5,7 +5,6 @@ from Bot import app
 @app.on_message(filters.command("start") & filters.private)
 async def start(client, message):
     await message.reply("👾")
-    
 
     keyboard = InlineKeyboardMarkup(
         [
@@ -14,10 +13,8 @@ async def start(client, message):
             ],
             [
                 InlineKeyboardButton("⭐️Support⭐️", url="https://t.me/ShivaSupportChat"),
-                InlineKeyboardButton("✨Add me To Your Group✨", url="https://telegram.dog/ddmon_test_Bot?startgroup=true")
-                InlineKeyboardButton("✨OWNER✨", url="ISHIKKI_AKIRA")
-    
-            ]
+                InlineKeyboardButton("✨Add me To Your Group✨", url="https://telegram.dog/ddmon_test_Bot?startgroup=true"),
+                InlineKeyboardButton("✨OWNER✨", url="@YUVI1POKE_LOVER")
             ]
         ]
     )
@@ -30,4 +27,4 @@ async def start(client, message):
         "──────────────────\n"
         "๏ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ Command ʙᴜᴛᴛᴏɴ ᴛᴏ ɢᴇᴛ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴍʏ ᴍᴏᴅᴜʟᴇs ᴀɴᴅ ᴄᴏᴍᴍᴀɴᴅs.",
         reply_markup=keyboard
-)
+    )
