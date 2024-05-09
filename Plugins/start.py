@@ -16,7 +16,7 @@ async def start(client, message):
                 InlineKeyboardButton("⭐️Support⭐️", url="https://t.me/ShivaSupportChat")
             ],
             [
-                InlineKeyboardButton("🎵Music", callback_data="mus")
+                InlineKeyboardButton("🎵Music🎵", callback_data="mus")
             ]
         ]
     )
