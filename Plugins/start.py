@@ -4,7 +4,7 @@ from Bot import app
 
 @app.on_message(filters.command("start") & filters.private)
 async def start(client, message):
-    await message.reply("👾")
+    await message.reply_text("👾")
 
     keyboard = InlineKeyboardMarkup(
         [
