@@ -9,9 +9,7 @@ async def start(client, message):
     keyboard = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton("⚡️Commands⚡️", callback_data="com")
-            ],
-            [
+                InlineKeyboardButton("⚡️Commands⚡️", callback_data="com"),
                 InlineKeyboardButton("⭐️Support⭐️", url="https://t.me/ShivaSupportChat"),
                 InlineKeyboardButton("✨Add me To Your Group✨", url="https://telegram.dog/ddmon_test_Bot?startgroup=true"),
                 InlineKeyboardButton("✨OWNER✨", url="https://t.me/Yuvi1poke_lover")
