@@ -47,7 +47,7 @@ app = Client(
     api_id=c.api_id, 
     api_hash=c.api_hash,
     bot_token=c.bot_token,
-    plugins=dict(root="plugins")
+    plugins=dict(root="Bot")
 )
 
 
