@@ -12,36 +12,10 @@ START_TEXT = (
 
 HELP_TEXT = "Shiva commands available:\n➛ /help: PM's you this message.\n➛ /help <module name>: PM's you info about that module.\n➛ /donate: information on how to donate!\n➛ /settings:\n➛ in PM: will send you your settings for all supported modules.\n➛ in a group: will redirect you to pm, with all that chat's settings."
 
-HELP_BUTTON = [
-    [
-        InlineKeyboardButton('👮 Admin', callback_data='admin_help'),
-        InlineKeyboardButton('👥 UserInfo', callback_data='userinfo_help'),
-        InlineKeyboardButton('🤗 Fun', callback_data='fun_help'),
-    ],
-    [
-        InlineKeyboardButton('👻 Misc', callback_data='misc_help'),
-        InlineKeyboardButton('🔍 Tagging', callback_data='tagging_help'),
-        InlineKeyboardButton('✍ Notes', callback_data='notes_help'),
-    ],
-    [
-        InlineKeyboardButton('🧚 Nekos', callback_data='nekos_help'),
-        InlineKeyboardButton('❌ Ban-All', callback_data='banall_help'),
-        InlineKeyboardButton('🤖 Ai', callback_data='ai_help'),
-    ],
-    [
-        InlineKeyboardButton('☠ Zombies', callback_data='zombies_help'),
-        InlineKeyboardButton('✏ Rename', callback_data='rename_help'),
-        InlineKeyboardButton('📩 Paste', callback_data='paste_help'),
-    ],
-    [
-        InlineKeyboardButton('🏡 Home', callback_data='home')
-    ]
-]
-
 BUTTON = [
     [
         InlineKeyboardButton("🔙 Back", callback_data="help_back"),
-        InlineKeyboardButton("🗑 Close", callback_data='close')
+        InlineKeyboardButton("🗑 Close", callback_data="close")
     ]
 ]
 
@@ -119,55 +93,40 @@ async def start(client, message):
         reply_markup=keyboard
     )
 
-@app.on_callback_query(filters.regex("^com$"))
-async def commands(client, callback_query):
-    await callback_query.answer()
-    
+@app.on_message(filters.command("help") & filters.private)
+async def commands(client, message):
     keyboard = InlineKeyboardMarkup(
         [
             [InlineKeyboardButton("Open Commands Here", callback_data="HELP_BUTTON")]
         ]
     )
 
-    text = HELP_TEXT
-    
-    await callback_query.message.edit_text(text, reply_markup=keyboard)
-
-@app.on_callback_query(filters.regex("home"))
-async def help(_, query):
-    await query.message.edit_caption(START_TEXT,
-                                    reply_markup=InlineKeyboardMarkup(HELP_BUTTON))
+    await message.reply_text(HELP_TEXT, reply_markup=keyboard)
 
 @app.on_callback_query(filters.regex("help_back"))
-async def help(_, query):
-    await query.message.edit_caption(HELP_TEXT,
-                                    reply_markup=InlineKeyboardMarkup(HELP_BUTTON))
+async def help_back(_, query):
+    await query.message.edit_text(HELP_TEXT, reply_markup=InlineKeyboardMarkup(BUTTON))
 
 @app.on_callback_query(filters.regex("close"))
 async def close(_, query):
     await query.message.delete()
 
 @app.on_callback_query(filters.regex("admin_help"))
-async def adminhelp(_, query):
-     await query.message.edit_caption(ADMIN_TEXT,
-                                      reply_markup=InlineKeyboardMarkup(BUTTON))
+async def admin_help(_, query):
+     await query.message.edit_text(ADMIN_TEXT, reply_markup=InlineKeyboardMarkup(BUTTON))
 
 @app.on_callback_query(filters.regex("userinfo_help"))
-async def userinfohelp(_, query):
-     await query.message.edit_caption(USERINFO_TEXT,
-                                      reply_markup=InlineKeyboardMarkup(BUTTON))
+async def userinfo_help(_, query):
+     await query.message.edit_text(USERINFO_TEXT, reply_markup=InlineKeyboardMarkup(BUTTON))
 
 @app.on_callback_query(filters.regex("misc_help"))
-async def miscshelp(_, query):
-     await query.message.edit_caption(MISC_TEXT,
-                                      reply_markup=InlineKeyboardMarkup(BUTTON))
+async def misc_help(_, query):
+     await query.message.edit_text(MISC_TEXT, reply_markup=InlineKeyboardMarkup(BUTTON))
 
 @app.on_callback_query(filters.regex("tagging_help"))
-async def tagginghelp(_, query):
-     await query.message.edit_caption(TAGGING_TEXT,
-                                      reply_markup=InlineKeyboardMarkup(BUTTON))
+async def tagging_help(_, query):
+     await query.message.edit_text(TAGGING_TEXT, reply_markup=InlineKeyboardMarkup(BUTTON))
 
 @app.on_callback_query(filters.regex("fun_help"))
-async def funhelp(_, query):
-     await query.message.edit_caption(FUN_TEXT,
-                                      reply_markup=InlineKeyboardMarkup(BUTTON))
+async def fun_help(_, query):
+     await query.message.edit_text(FUN_TEXT, reply_markup=InlineKeyboardMarkup(BUTTON))
