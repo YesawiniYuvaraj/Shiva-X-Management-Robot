@@ -101,7 +101,25 @@ async def commands(client, message):
         ]
     )
 
-    await message.reply_text(HELP_TEXT, reply_markup=keyboard)
+    await message.reply_text(HELP_TEXT, 
+    reply_markup=InlineKeyboardMarkup(BUTTON),)
+else:
+    kb = InlineKeyboardMarkup(
+        [
+          [
+            InlineKeyboardButton(
+              "Click me for help", 
+              url="https://t.me/CuteSerenaBot?start=help",
+            ),
+          ],
+        ],
+      )
+
+   await message.reply_text(pm_text,
+   reply_markup=kb,)
+   add_group(message.chat.id)
+pm_text = "Contact me in PM for help!"
+
 
 @app.on_callback_query(filters.regex("help_back"))
 async def help_back(_, query):
