@@ -34,11 +34,21 @@ async def start(client, message):
 @app.on_callback_query(filters.regex("^com$"))
 async def commands(client, callback_query):
     await callback_query.answer()
-    text = ("Shiva commands available:\n"
-            "➛ /help: PM's you this message.\n"
-            "➛ /help <module name>: PM's you info about that module.\n"
-            "➛ /donate: information on how to donate!\n"
-            "➛ /settings:\n"
-            "   ➛ in PM: will send you your settings for all supported modules.\n"
-            "   ➛ in a group: will redirect you to pm, with all that chat's settings.")
-    await callback_query.message.edit_text(text)
+    
+    keyboard = InlineKeyboardMarkup(
+        [
+            [InlineKeyboardButton("Open Commands Here", callback_data="HELP_BUTTON")]
+        ]
+    )
+
+    text = (
+        "Shiva commands available:\n"
+        "➛ /help: PM's you this message.\n"
+        "➛ /help <module name>: PM's you info about that module.\n"
+        "➛ /donate: information on how to donate!\n"
+        "➛ /settings:\n"
+        "   ➛ in PM: will send you your settings for all supported modules.\n"
+        "   ➛ in a group: will redirect you to pm, with all that chat's settings."
+    )
+    
+    await callback_query.message.edit_text(text, reply_markup=keyboard)
