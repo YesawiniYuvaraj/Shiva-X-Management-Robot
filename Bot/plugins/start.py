@@ -1,7 +1,8 @@
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.enums import ChatType
-from Bot import app
+from pyrogram.types import CallbackQuery
+from Bot import app 
 
 START_TEXT = (
     "Hey {first_name}, ⚡️\n"
@@ -108,17 +109,18 @@ async def start(client, message):
         caption=START_TEXT.format(first_name=message.from_user.first_name),
         reply_markup=keyboard
     )
+
 @app.on_callback_query(filters.regex("^com$"))
-async def commands(client, callback_query):
+async def commands(_, callback_query):
     await callback_query.answer()
-    await message.reply_text(HELP_TEXT,
-            reply_markup=InlineKeyboardMarkup(HELP_BUTTON),)
+    await callback_query.message.reply_text(HELP_TEXT,
+            reply_markup=InlineKeyboardMarkup(HELP_BUTTON))
 
 @app.on_message(filters.command("help"))
-async def help(_, message):
-    if message.chat.type == ChatType.PRIVATE:
+async def help_command(_, message):
+    if message.chat.type == "private":
         await message.reply_text(HELP_TEXT,
-            reply_markup=InlineKeyboardMarkup(HELP_BUTTON),)
+            reply_markup=InlineKeyboardMarkup(HELP_BUTTON))
 
 @app.on_callback_query(filters.regex("help_back"))
 async def help_back(_, query):
@@ -146,4 +148,4 @@ async def tagging_help(_, query):
 
 @app.on_callback_query(filters.regex("fun_help"))
 async def fun_help(_, query):
-    await query.message.edit_text(FUN_TEXT, reply_markup=InlineKeyboardMarkup(BUTTON))
+    await query.message.edit_text(FUN_TEXT, reply_markup=InlineKeyboardMarkup(BUTTON)))
