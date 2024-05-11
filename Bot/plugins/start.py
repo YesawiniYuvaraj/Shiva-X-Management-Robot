@@ -108,6 +108,11 @@ async def start(client, message):
         caption=START_TEXT.format(first_name=message.from_user.first_name),
         reply_markup=keyboard
     )
+@app.on_callback_query(filters.regex("^com$"))
+async def commands(client, callback_query):
+    await callback_query.answer()
+    await message.reply_text(HELP_TEXT,
+            reply_markup=InlineKeyboardMarkup(HELP_BUTTON),)
 
 @app.on_message(filters.command("help"))
 async def help(_, message):
