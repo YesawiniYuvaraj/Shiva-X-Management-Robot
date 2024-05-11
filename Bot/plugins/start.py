@@ -1,6 +1,7 @@
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-from Bot import app 
+from pyrogram.types import ChatType
+from Bot import app
 
 START_TEXT = (
     "Hey {first_name}, ⚡️\n"
@@ -107,10 +108,9 @@ async def start(client, message):
 
 @app.on_message(filters.command("help"))
 async def help(_, message):
-   if message.chat.type == ChatType.PRIVATE:
-    await message.reply_text(HELP_TEXT,
-    reply_markup=InlineKeyboardMarkup(HELP_BUTTON),)
-    add_user(message.from_user.id)
+    if message.chat.type == ChatType.PRIVATE:
+        await message.reply_text(HELP_TEXT,
+            reply_markup=InlineKeyboardMarkup(HELP_BUTTON),)
 
 @app.on_callback_query(filters.regex("help_back"))
 async def help_back(_, query):
