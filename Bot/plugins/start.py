@@ -1,6 +1,6 @@
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-from pyrogram.types import ChatType
+from pyrogram.enums import ChatType
 from Bot import app
 
 START_TEXT = (
