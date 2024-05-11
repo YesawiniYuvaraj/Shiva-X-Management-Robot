@@ -149,4 +149,4 @@ async def tagging_help(_, query):
 
 @app.on_callback_query(filters.regex("fun_help"))
 async def fun_help(_, query):
-    await query.message.edit_text(FUN_TEXT, reply_markup=InlineKeyboardMarkup(BUTTON)))
+    await query.message.edit_text(FUN_TEXT, reply_markup=InlineKeyboardMarkup(BUTTON))
