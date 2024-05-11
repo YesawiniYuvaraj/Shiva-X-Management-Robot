@@ -13,6 +13,9 @@ START_TEXT = (
 
 HELP_TEXT = "Shiva commands available:\n➛ /help: PM's you this message.\n➛ /help <module name>: PM's you info about that module.\n➛ /donate: information on how to donate!\n➛ /settings:\n➛ in PM: will send you your settings for all supported modules.\n➛ in a group: will redirect you to pm, with all that chat's settings."
 
+BUTTON = [[InlineKeyboardButton("🔙 Back", callback_data="help_back"),
+            InlineKeyboardButton("🗑 Close", callback_data='close'),]]
+
 HELP_BUTTON = [[
         InlineKeyboardButton('👮 Admin', callback_data='admin_help'),
         InlineKeyboardButton('👥 UserInfo', callback_data='userinfo_help'),
