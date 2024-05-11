@@ -105,7 +105,7 @@ async def start(client, message):
         reply_markup=keyboard
     )
 
-@bot.on_message(filters.command("help"))
+@app.on_message(filters.command("help"))
 async def help(_, message):
    if message.chat.type == ChatType.PRIVATE:
     await message.reply_text(HELP_TEXT,
