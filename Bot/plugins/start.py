@@ -104,11 +104,11 @@ async def start(client, message):
         caption=G_MSG.format(first_name=message.from_user.first_name),
         reply_markup=InlineKeyboardMarkup(PM)
     )
-
+    await message.delete()
 
 @app.on_message(filters.command("start") & filters.private)
 async def start_cmd(client, message):
-    await message.delete()
+    
     await message.reply_photo(
         photo="http://telegra.ph/file/cc3c8743925134dad8f1a.jpg",
         caption=f"Hello {message.from_user.first_name}! <code> Starting the bot</code>"
