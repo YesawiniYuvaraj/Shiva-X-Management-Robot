@@ -87,9 +87,13 @@ Usage of Fun commands:
 """
 
 @app.on_message(filters.command("start") & filters.private)
-async def start(client, message):
-    await message.reply('😭')
-    await message.edit('⭐️')
+async def start_cmd(client, message):
+    reply1 = await message.reply_text('😭')
+    await asyncio.sleep(0.5)
+    reply2 = await reply1.edit('⭐️')
+    await asyncio.sleep(0.5)
+    await reply2.delete()
+    await asyncio.sleep(0.5)
 
     keyboard = InlineKeyboardMarkup(
         [
