@@ -104,7 +104,6 @@ async def start(client, message):
         caption=G_MSG.format(first_name=message.from_user.first_name),
         reply_markup=InlineKeyboardMarkup(PM)
     )
-    await message.delete()
 
 @app.on_message(filters.command("start") & filters.private)
 async def start_cmd(client, message):
