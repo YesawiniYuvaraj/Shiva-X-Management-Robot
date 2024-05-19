@@ -237,6 +237,25 @@ async def aq_cmd(client, message):
     )
 
 
+@app.on_message(filters.command("help"))
+async def help_cmd(client, message):
+    await message.reply_text(
+        text = HELP_TEXT,
+        reply_markup=InlineKeyboardMarkup(HELP_BUTTON)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
