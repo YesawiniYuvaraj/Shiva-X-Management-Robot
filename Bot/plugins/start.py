@@ -2,6 +2,18 @@ from pyrogram import Client, filters
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 import asyncio
 from Bot import app 
+import random
+
+
+FUN_LIST = [
+    "Its not a question of can or can't. Some things in life you just do. - Goku (Dragon Ball Z)",
+    "The only way to truly escape the mundane is for you to constantly be evolving. Whether you choose to aim high, or aim low, just keep moving forward. - Izaya Orihara (Durarara!!)"
+]
+
+
+
+
+
 
 START_TEXT = (
     "Hey {first_name}, ⚡️\n"
@@ -216,3 +228,14 @@ async def fun_help(_, query):
         FUN_TEXT, 
         reply_markup=InlineKeyboardMarkup(BUTTON)
     )
+@app.on_message(filters.command("aq"))
+async def aq_cmd(client, message):
+    await message.reply_text(
+        text = random.choice(FUN_LIST)
+    )
+
+
+
+
+
+
