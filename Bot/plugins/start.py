@@ -88,6 +88,7 @@ Usage of Fun commands:
 """
 
 @app.on_message(filters.command("start") & filters.private)
+@app.on_message(filters.command("start") & filters.private)
 async def start_cmd(client, message):
     reply1 = await message.reply_text('⚡️')
     await asyncio.sleep(0.5)
@@ -95,7 +96,7 @@ async def start_cmd(client, message):
     await asyncio.sleep(0.5)
     await reply2.delete()
     await asyncio.sleep(0.5)
-    reply3 = await reply2.edit('✋')
+    reply3 = await message.reply_text('✋')
     await asyncio.sleep(0.5)
     await reply3.delete()
     
