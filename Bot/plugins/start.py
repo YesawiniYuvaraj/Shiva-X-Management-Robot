@@ -90,14 +90,22 @@ Usage of Fun commands:
 @app.on_message(filters.command("start") & filters.private)
 @app.on_message(filters.command("start") & filters.private)
 async def start_cmd(client, message):
-    reply1 = await message.reply_text('⚡️')
+    await message.reply_photo(
+        photo = "http://telegra.ph/file/cc3c8743925134dad8f1a.jpg",
+        caption=f"Hello {message.from_user.first_name}! <code> Starting the bot</code>"
+    )
     await asyncio.sleep(0.9)
-    reply2 = await reply1.edit('💫')
+    reply1 = await message.reply_text('<code> Starting </code>')
     await asyncio.sleep(0.9)
-    await reply2.delete()
+    reply2 = await reply1.edit('<code> Starting .  </code>')
     await asyncio.sleep(0.9)
-    reply3 = await message.reply_text('✋')
+    reply3 = await reply2.edit('<code> Starting . .  </code>')
     await asyncio.sleep(0.9)
+    reply4 = await reply3.edit('<code> Starting . . .  </code>')
+    await asyncio.sleep(0.9)
+    await reply4.delete()
+    await asyncio.sleep(0.9)
+    
     
     
     keyboard = InlineKeyboardMarkup(
