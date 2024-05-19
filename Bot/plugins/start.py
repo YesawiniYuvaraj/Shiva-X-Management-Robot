@@ -4,6 +4,7 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.enums import ChatType
 from pyrogram.types import CallbackQuery
 from Bot import app 
+import asyncio
 
 START_TEXT = (
     "Hey {first_name}, ⚡️\n"
