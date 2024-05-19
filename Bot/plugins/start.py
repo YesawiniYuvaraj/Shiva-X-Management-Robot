@@ -107,7 +107,7 @@ async def start_cmd(client, message):
             ],
             [
                 InlineKeyboardButton("⚡️Commands⚡️", callback_data="com"),
-                InlineKeyboardButton("⭐️Support⭐️", url="https://t.me/ShivaSupportChat")
+                InlineKeyboardButton("⭐️Support⭐️", url="https://t.me/Shivasupport_chat")
             ],
             [
                 InlineKeyboardButton("🎵Music🎵", callback_data="mus")
