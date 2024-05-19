@@ -6,8 +6,10 @@ import random
 
 
 FUN_LIST = [
-    "Its not a question of can or can't. Some things in life you just do. - Goku (Dragon Ball Z)",
-    "The only way to truly escape the mundane is for you to constantly be evolving. Whether you choose to aim high, or aim low, just keep moving forward. - Izaya Orihara (Durarara!!)"
+    "It's not a question of can or can't. Some things in life you just do. - Goku (Dragon Ball Z)",
+    "The only way to truly escape the mundane is for you to constantly be evolving. Whether you choose to aim high, or aim low, just keep moving forward. - Izaya Orihara (Durarara!!)",
+    "I'm going to become the Pirate King! - Monkey D. Luffy (One Piece)",
+    "If you don't take risks, you can't create a future. - Monkey D. Luffy (One Piece)"
 ]
 
 
