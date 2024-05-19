@@ -108,6 +108,7 @@ async def start(client, message):
 
 @app.on_message(filters.command("start") & filters.private)
 async def start_cmd(client, message):
+    await message.delete()
     await message.reply_photo(
         photo="http://telegra.ph/file/cc3c8743925134dad8f1a.jpg",
         caption=f"Hello {message.from_user.first_name}! <code> Starting the bot</code>"
