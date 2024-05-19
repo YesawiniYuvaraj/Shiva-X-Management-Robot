@@ -14,6 +14,14 @@ START_TEXT = (
     "๏ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ Command ʙᴜᴛᴛᴏɴ ᴛᴏ ɢᴇᴛ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴍʏ ᴍᴏᴅᴜʟᴇs ᴀɴᴅ ᴄᴏᴍᴍᴀɴᴅs."
 )
 
+G_MSG = f"""
+Hello {message.from_user.first_name}
+start the bot in pm
+"""
+
+
+
+
 HELP_TEXT = "Shiva commands available:\n➛ /help: PM's you this message.\n➛ /help <module name>: PM's you info about that module.\n➛ /donate: information on how to donate!\n➛ /settings:\n➛ in PM: will send you your settings for all supported modules.\n➛ in a group: will redirect you to pm, with all that chat's settings."
 
 BUTTON = [[InlineKeyboardButton("🔙 Back", callback_data="help_back"),
@@ -87,7 +95,9 @@ Usage of Fun commands:
 • /dare - sent a dare message.
 """
 
-@app.on_message(filters.command("start") & filters.private)
+"""@app.on_message(filters.command("start") & filters.group)
+async def start(client, message)"""
+    
 @app.on_message(filters.command("start") & filters.private)
 async def start_cmd(client, message):
     await message.reply_photo(
