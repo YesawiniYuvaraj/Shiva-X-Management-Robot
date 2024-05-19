@@ -95,8 +95,17 @@ Usage of Fun commands:
 • /dare - sent a dare message.
 """
 
-"""@app.on_message(filters.command("start") & filters.group)
-async def start(client, message)"""
+@app.on_message(filters.command("start") & filters.group)
+async def start(client, message):
+  pm=[[
+    InlineKeyboardButton("Click here", url="http://T.me/ShivaXtestProbot?start=true")
+  ]]
+    await message.reply_photo(
+        photo = "https://telegra.ph/file/40b478d7e9c0a7df55881.jpg",
+        caption=G_MSG,
+        reply_mark=InlineKeyboardMarkup(pm)
+    )
+        
     
 @app.on_message(filters.command("start") & filters.private)
 async def start_cmd(client, message):
