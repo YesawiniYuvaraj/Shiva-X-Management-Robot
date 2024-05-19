@@ -116,12 +116,13 @@ async def start_cmd(client, message):
     await asyncio.sleep(0.9)
     reply4 = await reply3.edit('<code> Starting . . .  </code>')
     await asyncio.sleep(0.9)
+    await reply4.delete()
     reply5 = await message.reply_photo(
         photo="http://telegra.ph/file/cc3c8743925134dad8f1a.jpg",
         caption=f"Hello {message.from_user.first_name}! <code> Starting the bot</code>"
     )
     await asyncio.sleep(0.9)
-    await reply4.delete()
+    await reply5.delete()
     await asyncio.sleep(0.9)
 
     keyboard = InlineKeyboardMarkup(
