@@ -97,6 +97,7 @@ async def start_cmd(client, message):
     await asyncio.sleep(0.5)
     reply3 = await reply2.edit('✋')
     await asyncio.sleep(0.5)
+    await reply3.delete()
     
 
     keyboard = InlineKeyboardMarkup(
