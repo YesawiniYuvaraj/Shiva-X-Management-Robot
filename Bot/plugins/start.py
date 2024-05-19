@@ -91,13 +91,13 @@ Usage of Fun commands:
 @app.on_message(filters.command("start") & filters.private)
 async def start_cmd(client, message):
     reply1 = await message.reply_text('⚡️')
-    await asyncio.sleep(0.5)
+    await asyncio.sleep(0.9)
     reply2 = await reply1.edit('💫')
-    await asyncio.sleep(0.5)
+    await asyncio.sleep(0.9)
     await reply2.delete()
-    await asyncio.sleep(0.5)
+    await asyncio.sleep(0.9)
     reply3 = await message.reply_text('✋')
-    await asyncio.sleep(0.5)
+    await asyncio.sleep(0.9)
     
     
     keyboard = InlineKeyboardMarkup(
