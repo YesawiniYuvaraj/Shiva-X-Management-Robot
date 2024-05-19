@@ -170,14 +170,6 @@ async def commands(_, callback_query):
     )
 
 
-@app.on_message(filters.command("help"))
-async def help_command(_, message):
-    if message.chat.type == "private":
-        await message.reply_text(
-            HELP_TEXT,
-            reply_markup=InlineKeyboardMarkup(HELP_BUTTON)
-        )
-
 
 @app.on_callback_query(filters.regex("help_back"))
 async def help_back(_, query):
@@ -241,7 +233,8 @@ async def aq_cmd(client, message):
 async def help_cmd(client, message):
     await message.reply_text(
         text = HELP_TEXT,
-        reply_markup=InlineKeyboardMarkup(HELP_BUTTON))
+        reply_markup=InlineKeyboardMarkup(HELP_BUTTON)
+    )
 
 
 
