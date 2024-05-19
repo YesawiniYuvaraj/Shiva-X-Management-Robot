@@ -97,13 +97,13 @@ Usage of Fun commands:
 
 @app.on_message(filters.command("start") & filters.group)
 async def start(client, message):
-  pm=[[
+  PM=[[
     InlineKeyboardButton("Click here", url="http://T.me/ShivaXtestProbot?start=true")
   ]]
     await message.reply_photo(
         photo = "https://telegra.ph/file/40b478d7e9c0a7df55881.jpg",
         caption=G_MSG,
-        reply_mark=InlineKeyboardMarkup(pm)
+        reply_mark=InlineKeyboardMarkup(PM)
     )
         
     
