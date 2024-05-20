@@ -135,9 +135,9 @@ async def start_cmd(client, message):
         photo="http://telegra.ph/file/cc3c8743925134dad8f1a.jpg",
         caption=f"Hello {message.from_user.first_name}! <code> Starting the bot</code>"
     )
-    await asyncio.sleep(1.5)
+    await asyncio.sleep(5)
     await reply5.delete()
-    await asyncio.sleep(0.9)
+    await asyncio.sleep(1)
 
     keyboard = InlineKeyboardMarkup(
         [
@@ -236,6 +236,7 @@ async def help_cmd(client, message):
         reply_markup=InlineKeyboardMarkup(HELP_BUTTON)
     )
 
+"""
 @app.on_message(filters.command("help") & filters.group)
 async def help_cmd(client, message):
     GHELP = [[
@@ -245,7 +246,7 @@ async def help_cmd(client, message):
         text = "**Tap the buttons given below**",
         reply_markup=InlineKeyboardMarkup(GHELP)
     )
-
+"""
 
 
 
