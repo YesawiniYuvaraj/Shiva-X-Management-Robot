@@ -159,7 +159,7 @@ async def start_cmd(client, message):
     await message.reply_photo(
         photo="https://telegra.ph/file/40b478d7e9c0a7df55881.jpg",
         caption=START_TEXT.format(first_name=message.from_user.first_name),
-        reply_markup=keyboard
+        reply_markup=InlineKeyboardMarkup(keyboard) 
     )
 
 
