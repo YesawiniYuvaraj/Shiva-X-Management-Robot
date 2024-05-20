@@ -229,12 +229,38 @@ async def aq_cmd(client, message):
     )
 
 
-@app.on_message(filters.command("help"))
+@app.on_message(filters.command("help") & filters.private)
 async def help_cmd(client, message):
     await message.reply_text(
         text = HELP_TEXT,
         reply_markup=InlineKeyboardMarkup(HELP_BUTTON)
     )
+
+@app.on_message(filters.command("help") & filters.group)
+async def help_cmd(client, message):
+    GHELP = [[
+        InlineKeyboardButton("Open in dm", url=f"https://t.me/ShivaXtestProbot?start=help"),
+    ]]
+    await message.reply_text(
+        text = "**Tap the buttons given below**",
+        reply_markup=InlineKeyboardMarkup(GHELP)
+    )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
