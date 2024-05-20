@@ -4,6 +4,25 @@ import asyncio
 from Bot import app 
 import random
 
+START_BUTTON = [[
+    InlineKeyboardButton("✨Add me To Your Group✨", url="https://telegram.dog/ddmon_test_Bot?startgroup=true")
+    ],[
+    InlineKeyboardButton("⚡️Commands⚡️", callback_data="com"),
+    InlineKeyboardButton("⭐️Support⭐️", url="https://t.me/Shivasupport_chat")
+    ],[
+    InlineKeyboardButton("🎵Music🎵", callback_data="mus")
+    ],[
+    InlineKeyboardButton("👨‍💼 OWNER👨‍💼", url="https://Yuvi1poke_lover"),
+    InlineKeyboardButton("👨‍🔧 WORKER 👨‍🔧", url="https://Siva_the_king")
+]]
+
+
+
+
+
+
+
+
 
 FUN_LIST = [
     "It's not a question of can or can't. Some things in life you just do. - Goku (Dragon Ball Z)",
@@ -142,23 +161,10 @@ async def start_cmd(client, message):
     )
     await asyncio.sleep(1.5)
     await reply5.delete()
-
-    keyboard = [[
-        InlineKeyboardButton("✨Add me To Your Group✨", url="https://telegram.dog/ddmon_test_Bot?startgroup=true")
-        ],[
-        InlineKeyboardButton("⚡️Commands⚡️", callback_data="com"),
-        InlineKeyboardButton("⭐️Support⭐️", url="https://t.me/Shivasupport_chat")
-        ],[
-        InlineKeyboardButton("🎵Music🎵", callback_data="mus")
-        ],[
-        InlineKeyboardButton("👨‍💼 OWNER👨‍💼", url="https://Yuvi1poke_lover"),
-        InlineKeyboardButton("👨‍🔧 WORKER 👨‍🔧", url="https://Siva_the_king")
-    ]]
-
     await message.reply_photo(
         photo="https://telegra.ph/file/40b478d7e9c0a7df55881.jpg",
         caption=START_TEXT.format(first_name=message.from_user.first_name),
-        reply_markup=InlineKeyboardMarkup(keyboard) 
+        reply_markup=InlineKeyboardMarkup(START_BUTTON) 
     ) 
 
 
