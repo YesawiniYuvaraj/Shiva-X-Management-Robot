@@ -144,24 +144,17 @@ async def start_cmd(client, message):
     await reply5.delete()
     await asyncio.sleep(1)
 
-    keyboard = InlineKeyboardMarkup(
-        [
-            [
-                InlineKeyboardButton("✨Add me To Your Group✨", url="https://telegram.dog/ddmon_test_Bot?startgroup=true")
-            ],
-            [
-                InlineKeyboardButton("⚡️Commands⚡️", callback_data="com"),
-                InlineKeyboardButton("⭐️Support⭐️", url="https://t.me/Shivasupport_chat")
-            ],
-            [
-                InlineKeyboardButton("🎵Music🎵", callback_data="mus")
-            ],
-            [
-                InlineKeyboardButton("👨‍💼 OWNER👨‍💼", url="https://Yuvi1poke_lover"),
-                InlineKeyboardButton("👨‍🔧 WORKER 👨‍🔧", url="https://Siva_the_king")
-            ]
-        ]
-    )
+    keyboard = [[
+        InlineKeyboardButton("✨Add me To Your Group✨", url="https://telegram.dog/ddmon_test_Bot?startgroup=true")
+        ],[
+        InlineKeyboardButton("⚡️Commands⚡️", callback_data="com"),
+        InlineKeyboardButton("⭐️Support⭐️", url="https://t.me/Shivasupport_chat")
+        ],[
+        InlineKeyboardButton("🎵Music🎵", callback_data="mus")
+        ],[
+        InlineKeyboardButton("👨‍💼 OWNER👨‍💼", url="https://Yuvi1poke_lover"),
+        InlineKeyboardButton("👨‍🔧 WORKER 👨‍🔧", url="https://Siva_the_king")
+    ]]
 
     await message.reply_photo(
         photo="https://telegra.ph/file/40b478d7e9c0a7df55881.jpg",
