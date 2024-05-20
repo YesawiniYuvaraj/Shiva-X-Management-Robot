@@ -140,7 +140,7 @@ async def start_cmd(client, message):
         photo="http://telegra.ph/file/cc3c8743925134dad8f1a.jpg",
         caption=f"Hello {message.from_user.first_name}! <code> Starting the bot</code>"
     )
-    await asyncio.sleep(5)
+    await asyncio.sleep(1.5)
     await reply5.delete()
 
     keyboard = [[
@@ -159,7 +159,7 @@ async def start_cmd(client, message):
         photo="https://telegra.ph/file/40b478d7e9c0a7df55881.jpg",
         caption=START_TEXT.format(first_name=message.from_user.first_name),
         reply_markup=InlineKeyboardMarkup(keyboard) 
-    )
+    ) 
 
 
 @app.on_callback_query(filters.regex("^com$"))
