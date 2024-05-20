@@ -142,7 +142,6 @@ async def start_cmd(client, message):
     )
     await asyncio.sleep(5)
     await reply5.delete()
-    await asyncio.sleep(1)
 
     keyboard = [[
         InlineKeyboardButton("✨Add me To Your Group✨", url="https://telegram.dog/ddmon_test_Bot?startgroup=true")
