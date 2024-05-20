@@ -59,7 +59,8 @@ HELP_BUTTON = [
     [InlineKeyboardButton('☠ Zombies', callback_data='zombies_help'),
      InlineKeyboardButton('✏ Rename', callback_data='rename_help'),
      InlineKeyboardButton('📩 Paste', callback_data='paste_help')],
-    [InlineKeyboardButton('🏡 Home', callback_data='home')]
+    [InlineKeyboardButton('🏡 Home', callback_data='home')], 
+    [InlineKeyboardButton("🗑 Close", callback_data='close')]
 ]
 
 ADMIN_TEXT = (
@@ -226,6 +227,17 @@ async def fun_help(_, query):
         FUN_TEXT, 
         reply_markup=InlineKeyboardMarkup(BUTTON)
     )
+@app.on_callback_query(filters.regex("ghelp"))
+async def ghelp(_, query):
+    await query.message.edit_text(
+        HELP_TEXT, 
+        reply_markup=InlineKeyboardMarkup(HELP_BUTTON,)
+    )
+
+
+
+
+
 @app.on_message(filters.command("aq"))
 async def aq_cmd(client, message):
     await message.reply_text(
@@ -240,17 +252,19 @@ async def help_cmd(client, message):
         reply_markup=InlineKeyboardMarkup(HELP_BUTTON)
     )
 
-"""
+
 @app.on_message(filters.command("help") & filters.group)
 async def help_cmd(client, message):
     GHELP = [[
-        InlineKeyboardButton("Open in dm", url=f"https://t.me/ShivaXtestProbot?start=help"),
+        InlineKeyboardButton("Open in dm", url=f"https://t.me/ShivaXtestProbot?start=help")
+        ],[
+        InlineKeyboardButton("Open here", callback_data="ghelp")
     ]]
     await message.reply_text(
         text = "**Tap the buttons given below**",
         reply_markup=InlineKeyboardMarkup(GHELP)
     )
-"""
+
 
 
 
