@@ -159,6 +159,7 @@ async def start_cmd(client, message):
             [
                 InlineKeyboardButton("👨‍💼 OWNER👨‍💼", url="https://Yuvi1poke_lover"),
                 InlineKeyboardButton("👨‍🔧 WORKER 👨‍🔧", url="https://Siva_the_king")
+            ]
         ]
     )
 
