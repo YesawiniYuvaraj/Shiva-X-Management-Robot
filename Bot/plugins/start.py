@@ -162,7 +162,7 @@ async def start_cmd(client, message):
     await asyncio.sleep(1.5)
     await reply5.delete()
     await message.reply_photo(
-        photo="https://telegra.ph/file/0a44b45fe36629666f124.jpg",
+        photo="https://telegra.ph/file/dc512cb69ed93f37cefc5.jpg",
         caption=START_TEXT.format(first_name=message.from_user.first_name),
         reply_markup=InlineKeyboardMarkup(START_BUTTON) 
     ) 
