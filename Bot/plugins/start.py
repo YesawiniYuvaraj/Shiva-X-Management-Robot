@@ -12,8 +12,8 @@ START_BUTTON = [[
     ],[
     InlineKeyboardButton("🎵Music🎵", callback_data="mus")
     ],[
-    InlineKeyboardButton("👨‍💼 OWNER👨‍💼", url="https://Yuvi1poke_lover"),
-    InlineKeyboardButton("👨‍🔧 WORKER 👨‍🔧", url="https://Siva_the_king")
+    InlineKeyboardButton(text="👨‍💼 OWNER👨‍💼", url="https://Yuvi1poke_lover"),
+    InlineKeyboardButton(text="👨‍🔧 WORKER 👨‍🔧", url="https://Siva_the_king")
 ]]
 
 
