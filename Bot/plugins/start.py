@@ -12,8 +12,8 @@ START_BUTTON = [[
     ],[
     InlineKeyboardButton("🎵Music🎵", callback_data="mus")
     ],[
-    InlineKeyboardButton(text="👨‍💼 OWNER👨‍💼", url="https://Yuvi1poke_lover"),
-    InlineKeyboardButton(text="👨‍🔧 WORKER 👨‍🔧", url="https://Siva_the_king")
+    InlineKeyboardButton("👨‍💼 OWNER👨‍💼", url="https://Yuvi1poke_lover"),
+    InlineKeyboardButton("👨‍🔧 WORKER 👨‍🔧", url="https://Siva_the_king")
 ]]
 
 
@@ -40,13 +40,13 @@ FUN_LIST = [
 
 
 
-START_TEXT = (
-    "Hey {}, ⚡️\n"
-    "๏ ᴛʜɪs ɪs Shiva, !\n"
-    "➻ Shiva is an Anime themed group management bot with some fun extras.\n"
-    "──────────────────\n"
-    "๏ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ Command ʙᴜᴛᴛᴏɴ ᴛᴏ ɢᴇᴛ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴍʏ ᴍᴏᴅᴜʟᴇs ᴀɴᴅ ᴄᴏᴍᴍᴀɴᴅs."
-)
+START_TEXT = f"""
+Hey {message.from_user.first_name}, ⚡️
+๏ ᴛʜɪs ɪs Shiva, !\
+➻ Shiva is an Anime themed group management bot with some fun extras.
+──────────────────
+๏ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ Command ʙᴜᴛᴛᴏɴ ᴛᴏ ɢᴇᴛ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴍʏ ᴍᴏᴅᴜʟᴇs ᴀɴᴅ ᴄᴏᴍᴍᴀɴᴅs.
+"""
 
 G_MSG = "Hello {}, start the bot in pm"
 
