@@ -162,7 +162,7 @@ async def start_cmd(client, message):
     await asyncio.sleep(1.5)
     await reply5.delete()
     await message.reply_text(
-        text=START_TEXT.format(message.from_user.first_name),
+        text=START_TEXT,
         reply_markup=InlineKeyboardMarkup(START_BUTTON) 
     ) 
 
