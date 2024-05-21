@@ -5,8 +5,8 @@ if __name__ == "__main__":
     app.run()
     with app:
        app.send_photo(
-        chat_id=-1002085445813,
+        chat_id=-1002066412404,
         photo="https://telegra.ph/file/40b478d7e9c0a7df55881.jpg",
         caption="Bot Has Been Started",
-        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Support", url="https://t.me/+tqQMRvR0NiMyZTg1")]])
+        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Support", url="https://t.me/shivasupport_chat")]])
        )
