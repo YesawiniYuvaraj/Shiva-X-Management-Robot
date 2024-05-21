@@ -156,13 +156,13 @@ async def start_cmd(client, message):
     await asyncio.sleep(0.9)
     await reply4.delete()
     reply5 = await message.reply_photo(
-        photo="https://telegra.ph/file/40b478d7e9c0a7df55881.jpg",
+        photo="http://telegra.ph/file/cc3c8743925134dad8f1a.jpg",
         caption=f"Hello {message.from_user.first_name}! <code> Starting the bot</code>"
     )
     await asyncio.sleep(1.5)
     await reply5.delete()
     await message.reply_photo(
-        photo="http://graph.org/file/aa90696383c69f532adf9.jpg",
+        photo="https://telegra.ph/file/40b478d7e9c0a7df55881.jpg",
         caption=START_TEXT.format(first_name=message.from_user.first_name),
         reply_markup=InlineKeyboardMarkup(START_BUTTON) 
     ) 
