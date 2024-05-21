@@ -41,14 +41,14 @@ FUN_LIST = [
 
 
 START_TEXT = (
-    "Hey {first_name}, ⚡️\n"
+    "Hey {}, ⚡️\n"
     "๏ ᴛʜɪs ɪs Shiva, !\n"
     "➻ Shiva is an Anime themed group management bot with some fun extras.\n"
     "──────────────────\n"
     "๏ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ Command ʙᴜᴛᴛᴏɴ ᴛᴏ ɢᴇᴛ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴍʏ ᴍᴏᴅᴜʟᴇs ᴀɴᴅ ᴄᴏᴍᴍᴀɴᴅs."
 )
 
-G_MSG = "Hello {first_name}, start the bot in pm"
+G_MSG = "Hello {}, start the bot in pm"
 
 HELP_TEXT = (
     "Shiva commands available:\n"
@@ -139,7 +139,7 @@ async def start(client, message):
     ]]
     await message.reply_photo(
         photo="https://telegra.ph/file/40b478d7e9c0a7df55881.jpg",
-        caption=G_MSG.format(first_name=message.from_user.first_name),
+        caption=G_MSG.format(message.from_user.first_name),
         reply_markup=InlineKeyboardMarkup(PM)
     )
 
@@ -163,7 +163,7 @@ async def start_cmd(client, message):
     await reply5.delete()
     await message.reply_photo(
         photo="https://telegra.ph/file/40b478d7e9c0a7df55881.jpg",
-        caption=START_TEXT.format(first_name=message.from_user.first_name),
+        caption=START_TEXT.format(message.from_user.first_name),
         reply_markup=InlineKeyboardMarkup(START_BUTTON) 
     ) 
 
