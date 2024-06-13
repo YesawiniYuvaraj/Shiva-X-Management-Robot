@@ -7,9 +7,6 @@ from pyrogram import Client
 from motor.motor_asyncio import AsyncIOMotorClient as MongoClient
 
 
-MONGODB_URL = "mongodb+srv://akitodeveloper1:Akito@12345@onepiece.a7oh9k0.mongodb.net/?retryWrites=true&w=majority&appName=ONEPIECE" #Mongo DB
-MONGO = MongoClient(MONGODB_URL)
-DATABASE = MONGO.SHIVA
 
 
 FORMAT = "[SHIVA]: %(message)s"
