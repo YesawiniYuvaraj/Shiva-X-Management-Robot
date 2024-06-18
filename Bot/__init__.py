@@ -8,8 +8,12 @@ from motor.motor_asyncio import AsyncIOMotorClient as MongoClient
 
 
 
+MONGODB_URL = "mongodb+srv://Rss-bro:rss-bro-2008@cluster0.nncixin.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+MONGO = MongoClient(MONGODB_URL)
+DATABASE = MONGO.SOLO
 
-FORMAT = "[SHIVA]: %(message)s"
+
+FORMAT = "[SOLO]: %(message)s"
 
 logging.basicConfig(level=logging.INFO, handlers=[logging.FileHandler('logs.txt'),
                                                     logging.StreamHandler()], format=FORMAT)
@@ -39,20 +43,11 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 
+
 app = Client(
-    "shiva", 
+    "demon", 
     api_id=c.api_id, 
     api_hash=c.api_hash,
     bot_token=c.bot_token,
-    plugins=dict(root="Bot")
-)
-
-
-@app.on_message(filters.command("ping", prefixes="/"))
-async def ping(_, message):
-    start_time = time.time()
-    await message.reply_text("`Pinging...`")
-    end_time = time.time()
-    ping_time = round((end_time - start_time) * 1000, 3)
-    uptime = get_readable_time((time.time() - StartTime))
-    await message.reply_text(f"**I'm Alive !**\n⋙ 🔔 **Ping**: {ping_time}\n⋙ ⬆️ **Uptime**: {uptime}")
+    plugins=dict(root="Plugins")
+      )
